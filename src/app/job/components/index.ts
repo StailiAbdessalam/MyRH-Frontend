@@ -1,0 +1,1 @@
+export * from './job-post/job-post.component'
