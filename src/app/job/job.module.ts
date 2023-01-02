@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { JobRoutingModule } from './job-routing.module';
 import { JobsComponent } from './pages/jobs/jobs.component';
 import { JobPostComponent } from './components/job-post/job-post.component';
+import { SharedModule } from '../shared';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { JobPostComponent } from './components/job-post/job-post.component';
   ],
   imports: [
     CommonModule,
-    JobRoutingModule
+    JobRoutingModule,
+    SharedModule
   ]
 })
 export class JobModule { }
