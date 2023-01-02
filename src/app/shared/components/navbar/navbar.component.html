@@ -1,0 +1,26 @@
+<nav class="w-full bg-white h-12 flex text-xs flex-row items-center container">
+    <div class="w-11/12 mx-auto flex flex-row justify-between items-center">
+        <div class="w-3/12 flex flex-row justify-center items-center">
+            <ul class="w-full flex flex-row justify-between items-center">
+                <li class="logo cursor-pointer">
+                    <img class="h-8 w-8" src="/assets/icons/logo.svg" alt="logo">
+                </li>
+                <li>
+                    <a [routerLink]="['about']" class="font-medium link link-underline hover:text-purple-600 after:bg-color-400 link-underline-black">
+                        About us
+                    </a>
+                </li>
+                <li>
+                    <a [routerLink]="['']" class="font-medium link link-underline hover:text-purple-600 after:bg-color-400 link-underline-black">
+                         Contact 
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="w-1/12 flex flex-row justify-center">
+            <a href="" class=" w-full flex flex-row justify-center gap-2 items-center rounded-md p-2 hover:bg-gray-200"> <img class="w-4 h-4" src="/assets/icons/signin.svg" alt=".sing-in"> <span class="font-medium">Sing in</span></a>
+        </div>
+
+    </div>
+</nav>

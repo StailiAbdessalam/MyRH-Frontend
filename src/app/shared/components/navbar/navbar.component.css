@@ -1,0 +1,34 @@
+/* .link-underline {
+    padding-bottom: 5px;
+    border-bottom-width: 0;
+    background-image: linear-gradient(transparent, transparent), linear-gradient(#F2C, #F2C);
+    background-size: 0 3px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size .5s ease-in-out;
+}
+
+
+.link-underline:hover {
+    background-size: 100% 3px;
+} */
+
+.link-underline{
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.link-underline::after {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #9333EA;
+    transition: width .5s ease-in-out;
+}
+
+.link-underline:hover::after{
+    width: 100%;
+}
