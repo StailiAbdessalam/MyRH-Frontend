@@ -5,22 +5,7 @@
             <p class="font-bold ">WE HAVE 150,000+ LIVE JOBS</p>
             <h1 class=" w-11/12 font-semibold text-6xl mb-4">Find your dream jobs with <span class="font-bold">My</span><span class="text-[#9333EA] font-bold">RH</span> </h1>
             <p class="text-gray-500 mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet cumque doloremque quam cum expedita minima consequatur eius consectetur.</p>
-    
-            <div class="w-11/12 flex flex-row text-sm bg-white justify-start items-center h-12">
-                <div class=" w-4/12 h-full relative rounded-sm">
-                    <img class="w-4 h-4 absolute left-1 top-4" src="/assets/icons/job-company.svg" alt="job-company">
-                    <input [(ngModel)]="searchText" class="pl-6 h-full w-full outline-purple-600" type="text"  placeholder="Job, Company...">
-                    <div class="absolute right-0 top-2 bottom-2 border-l border-l-gray-400"></div>
-                </div>
-                <div class="w-4/12 h-full relative rounded-sm">
-                    <img class="w-4 h-4 absolute left-1 top-4" src="/assets/icons/location.svg" alt="location">
-                    <select (ngModelChange)="displayCountry($event)" [(ngModel)]="selectedCountry" class="h-full w-full bg-white outline-purple-600 p-3 pl-5" name="" id="">
-                        <option  [ngValue]="country"  *ngFor="let country of countries" >{{ country }}</option>
-                    </select>
-                </div>
-                
-                <button class="w-4/12 h-full p-4 rounded-sm bg-purple-600 relative block"><img class="w-4 h-4 absolute left-1 top-4" src="/assets/icons/baseline-search.svg" alt="search-icon"> <span class="text-white "> Find Job</span></button>
-            </div>
+            <job-search-bar class="w-11/12"></job-search-bar>
         </div>
         <div class="right w-6/12">
             <img src="/assets/icons/main-vector.svg" alt="">

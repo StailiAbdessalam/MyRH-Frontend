@@ -8,27 +8,8 @@ import { CountryService } from 'src/app/core';
 })
 export class WelcomeComponent implements OnInit {
 
-  countries :any 
-  selectedCountry: string = 'Afghanistan'
-  searchText: string = ''
-
-  constructor(private countryService: CountryService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    type Country = {
-      name: string, 
-      independant: boolean
-    };
-
-    this.countryService.getCountries().subscribe(
-      (data: Country[] | any) => {
-        this.countries = data.map((country: Country) => country.name)
-      }
-    )   
-  }
-
-  displayCountry(value: string) {
-    console.log('previous : ',this.selectedCountry);
-    console.log('current : ', value);
   }
 }

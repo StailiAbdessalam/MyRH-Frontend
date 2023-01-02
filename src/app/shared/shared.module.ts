@@ -4,13 +4,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { JobSearchBarComponent } from './components/job-search-bar/job-search-bar.component';
 
 
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    JobSearchBarComponent
   ],
   imports: [
     CommonModule,
@@ -20,6 +22,7 @@ import { FormsModule } from '@angular/forms';
   exports : [
     NavbarComponent,
     FooterComponent, 
+    JobSearchBarComponent,
     FormsModule
   ]
 })
