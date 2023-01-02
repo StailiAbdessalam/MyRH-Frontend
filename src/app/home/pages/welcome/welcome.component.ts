@@ -9,6 +9,8 @@ import { CountryService } from 'src/app/core';
 export class WelcomeComponent implements OnInit {
 
   countries :any 
+  selectedCountry: string = 'Afghanistan'
+  searchText: string = ''
 
   constructor(private countryService: CountryService) { }
 
@@ -22,7 +24,11 @@ export class WelcomeComponent implements OnInit {
       (data: Country[] | any) => {
         this.countries = data.map((country: Country) => country.name)
       }
-    )
-          
+    )   
+  }
+
+  displayCountry(value: string) {
+    console.log('previous : ',this.selectedCountry);
+    console.log('current : ', value);
   }
 }
