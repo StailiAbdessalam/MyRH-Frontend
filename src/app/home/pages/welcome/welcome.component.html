@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<main class="w-full h-[calc(100vh-5rem)] text-gray-800 flex flex-row items-center overflow-hidden">
+    <div class="w-11/12 ml-auto flex flex-row justify-between items-center">
+        <div class="left w-7/12 flex flex-col  justify-center items-start">
+            <p class="font-bold ">WE HAVE 150,000+ LIVE JOBS</p>
+            <h1 class=" w-11/12 font-semibold text-5xl mb-3">Find your dream jobs with <span class="font-bold">My</span><span class="text-[#9333EA] font-bold">RH</span> </h1>
+            <p class="text-gray-500 mb-3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet cumque doloremque quam cum expedita minima consequatur eius consectetur.</p>
+    
+            <div class="search-bar mb-3 w-10/12 flex flex-row text-xs bg-white justify-start items-center h-12">
+                <div class="w-4/12 h-full relative rounded-sm">
+                    <img class="w-4 h-4 absolute left-1 top-4" src="/assets/icons/job-company.svg" alt="job-company">
+                    <input class="h-full pl-6 outline-purple-600" type="text"  placeholder="Job, Company...">
+                </div>
+                <div class="w-4/12 h-full relative rounded-sm">
+                    <img class="w-4 h-4 absolute left-1 top-4" src="/assets/icons/location.svg" alt="location">
+                    <select class="h-full w-full outline-purple-600 p-3 pl-4" name="" id="">
+                        <option value="" *ngFor="let country of countries">{{ country }}</option>
+                    </select>
+                </div>
+                
+                <button class="w-4/12 h-full p-4 rounded-sm bg-purple-600 relative block"><img class="w-4 h-4 absolute left-1 top-4" src="/assets/icons/baseline-search.svg" alt="search-icon"> <span class="text-white "> Find Job</span></button>
+            </div>
+        </div>
+        <div class="right w-6/12">
+            <img src="/assets/icons/main-vector.svg" alt="">
+        </div>
+    </div> 
+</main>
