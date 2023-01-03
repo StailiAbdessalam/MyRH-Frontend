@@ -2,15 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { JobRoutingModule } from './job-routing.module';
-import { JobsComponent } from './pages/jobs/jobs.component';
-import { JobPostComponent } from './components/job-post/job-post.component';
 import { SharedModule } from '../shared';
+import { JobsComponent } from './pages';
+import { JobPostComponent, JobDescriptionComponent } from './components';
 
 
 @NgModule({
   declarations: [
     JobsComponent,
-    JobPostComponent
+    JobPostComponent,
+    JobDescriptionComponent
   ],
   imports: [
     CommonModule,

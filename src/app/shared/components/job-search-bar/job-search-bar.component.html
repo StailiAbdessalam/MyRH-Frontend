@@ -1,15 +1,15 @@
-<div class="w-full flex flex-row text-sm bg-white justify-start rounded-md border border-gray-300 items-center h-16">
+<div class="w-full flex flex-row text-sm bg-white justify-start rounded-md border border-gray-300 items-center h-14">
     <div class=" w-4/12 h-full relative rounded-sm">
-        <img class="w-4 h-4 absolute left-1 top-6" src="/assets/icons/job-company.svg" alt="job-company">
+        <img class="w-4 h-4 absolute left-1 top-5" src="/assets/icons/job-company.svg" alt="job-company">
         <input [(ngModel)]="searchText" class="pl-6 h-full rounded-md w-full outline-purple-600" type="text"  placeholder="Job, Company...">
         <div class="absolute right-0 top-2 bottom-2 border-l border-l-gray-400"></div>
     </div>
     <div class="w-4/12 h-full relative rounded-sm">
-        <img class="w-4 h-4 absolute left-1 top-6" src="/assets/icons/location.svg" alt="location">
+        <img class="w-4 h-4 absolute left-1 top-5" src="/assets/icons/location.svg" alt="location">
         <select (ngModelChange)="displayCountry($event)" [(ngModel)]="selectedCountry" class="h-full w-full bg-white outline-purple-600 p-3 pl-5" name="" id="">
             <option  [ngValue]="country"  *ngFor="let country of countries" >{{ country }}</option>
         </select>
     </div>
     
-    <button class="w-4/12 h-full p-4 rounded-sm bg-purple-600 relative block"><img class="w-5 h-5 absolute left-1/4 top-6" src="/assets/icons/baseline-search.svg" alt="search-icon"> <span class="text-white "> Find Job</span></button>
+    <a [routerLink]="['/jobs']" class="w-4/12 h-full text-center p-4  rounded-sm bg-purple-600 relative block"><img class="w-5 h-5 absolute left-1/4 top-5" src="/assets/icons/baseline-search.svg" alt="search-icon"> <span class="text-white inline-block mt-0.5"> Find Job</span></a>
 </div>
