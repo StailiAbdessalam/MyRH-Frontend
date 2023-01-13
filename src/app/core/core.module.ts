@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CountryService } from './services';
+import { CountryService, SecurityService } from './services';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -15,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
   exports: [
   ], 
   providers: [
-    CountryService
+    CountryService,
+    SecurityService
   ]
 })
 export class CoreModule { }

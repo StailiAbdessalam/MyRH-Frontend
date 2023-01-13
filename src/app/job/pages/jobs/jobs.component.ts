@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-jobs',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class JobsComponent implements OnInit {
 
-  constructor() { }
+  name: string = ''
+
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.http.get(environment.baseUrl + '/v1/home').subscribe((data: any) => this.name = data.name)
   }
 
 }
