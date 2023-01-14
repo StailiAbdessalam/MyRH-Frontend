@@ -8,6 +8,7 @@ import { SharedModule } from '../shared';
 import { QuillModule } from 'ngx-quill';
 import { TextEditorComponent } from './components';
 import { AddJobComponent, LoginComponent } from './pages';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -17,8 +18,9 @@ import { AddJobComponent, LoginComponent } from './pages';
   ],
   imports: [
     CommonModule,
-    CompanyRoutingModule, 
-    SharedModule, 
+    CompanyRoutingModule,
+    SharedModule,
+    ReactiveFormsModule,
     QuillModule.forRoot()
   ]
 })

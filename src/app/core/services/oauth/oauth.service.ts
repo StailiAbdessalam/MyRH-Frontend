@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class SecurityService {
+export class OauthService {
   private authorizeEndpoint = '/oauth2/authorization/google'
   private tokenEndpoint     = '/login/oauth2/code/google'
   private baseUrl           = environment.baseUrl

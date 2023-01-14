@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {SecurityService} from "../core";
+import {OauthService} from "../core";
 import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
@@ -9,7 +9,7 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class CallbackComponent implements OnInit {
 
-  constructor(private securityService: SecurityService,
+  constructor(private securityService: OauthService,
               private activatedRoute: ActivatedRoute,
               private router: Router) { }
 
