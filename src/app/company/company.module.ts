@@ -10,12 +10,14 @@ import { TextEditorComponent } from './components';
 import { AddJobComponent, LoginComponent } from './pages';
 import {ReactiveFormsModule} from "@angular/forms";
 import {TextEditorService} from "./services";
+import { SignupComponent } from './pages/signup/signup.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
     TextEditorComponent,
-    AddJobComponent
+    AddJobComponent,
+    SignupComponent
   ],
   imports: [
     CommonModule,
