@@ -8,23 +8,27 @@ import { CountryService } from 'src/app/core';
 })
 export class JobSearchBarComponent implements OnInit {
 
-  countries :any 
+  countries :string[] = []
   selectedCountry: string = 'Afghanistan'
   searchText: string = ''
 
   constructor(private countryService: CountryService) { }
 
   ngOnInit(): void {
-    type Country = {
-      name: string, 
-      independant: boolean
-    };
 
-    this.countryService.getCountries().subscribe(
-      (data: Country[] | any) => {
-        this.countries = data.map((country: Country) => country.name)
+    type Country = {
+      name: string,
+      independant: boolean
+    }
+
+    this.countryService.getCountries().subscribe({
+      next: (country: Country | any) => {
+        this.countries = country.map((country: Country) => country.name)
+      },
+      error: err => {
+        console.log(err)
       }
-    )   
+    })
   }
 
   displayCountry(value: string) {

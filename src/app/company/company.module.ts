@@ -9,6 +9,7 @@ import { QuillModule } from 'ngx-quill';
 import { TextEditorComponent } from './components';
 import { AddJobComponent, LoginComponent } from './pages';
 import {ReactiveFormsModule} from "@angular/forms";
+import {TextEditorService} from "./services";
 
 @NgModule({
   declarations: [
@@ -22,6 +23,9 @@ import {ReactiveFormsModule} from "@angular/forms";
     SharedModule,
     ReactiveFormsModule,
     QuillModule.forRoot()
+  ],
+  providers: [
+    TextEditorService
   ]
 })
 export class CompanyModule { }
