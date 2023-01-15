@@ -1,5 +1,5 @@
 <app-navbar></app-navbar>
-<section class="bg-white">
+<section *ngIf="!verificationPhase" class="bg-white">
   <div class="lg:grid lg:min-h-screen lg:grid-cols-12">
     <section
       class="relative flex justify-center items-center h-32 items-end  lg:col-span-5 lg:h-full xl:col-span-6"
@@ -120,3 +120,5 @@
     </main>
   </div>
 </section>
+
+<app-verification *ngIf="verificationPhase"></app-verification>

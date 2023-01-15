@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {CompanyService} from "../../services";
-import {OauthService} from "../../../core";
+import {EncryptService, OauthService} from "../../../core";
 
 @Component({
   selector: 'app-signup',
@@ -20,10 +20,12 @@ export class SignupComponent implements OnInit {
 
   error:boolean = false
   errorValue: string = ''
+  verificationPhase: boolean = false
 
 
   constructor(private companyService: CompanyService,
-              private oauthService: OauthService) { }
+              private oauthService: OauthService,
+              private encryptService: EncryptService) { }
 
   ngOnInit(): void {
   }
@@ -38,21 +40,23 @@ export class SignupComponent implements OnInit {
       return
     }
     this.error = false
-    console.log(this.companyForm.controls)
 
     const company = {
-      name: this.companyForm.get('name')?.value ?? '',
       email: this.companyForm.get('email')?.value ?? '',
       password: this.companyForm.get('password')?.value ?? '',
+      name: this.companyForm.get('name')?.value ?? '',
       size: this.companyForm.get('size')?.value ?? '',
       foundationDate: this.companyForm.get('foundationDate')?.value ?? '',
       logo: 'test.png'
     }
+    console.log(company)
 
     this.companyService.register(company).subscribe({
       next: (data) => {
-        this.oauthService.updateToken(data.token)
-        localStorage.setItem('email', data.email)
+        console.log(data)
+        localStorage.setItem('email', company.email)
+        localStorage.setItem('password', this.encryptService.encrypt(company.password))
+        this.verificationPhase = true
       },
       error: (err) => {
         console.log(err)
