@@ -39,10 +39,10 @@
                     </div>
                     <div class="sm:col-span-2 ">
                         <label for="description" class="block mb-2 text-sm font-medium text-gray-900 ">Description</label>
-                        <text-editor id="description" ></text-editor>
+                        <text-editor formControlName="description" id="description" ></text-editor>
                     </div>
                 </div>
-                <button (click)="displayFormValues()" type="submit" class="mt-auto px-5 py-2.5 my-4 sm:mt-6 text-sm font-medium text-center text-black bg-white border border-gray-400 rounded-lg focus:ring-4 focus:ring-primary-200">
+                <button (click)="addOffer()" type="submit" class="mt-auto px-5 py-2.5 my-4 sm:mt-6 text-sm font-medium text-center text-black bg-white border border-gray-400 rounded-lg focus:ring-4 focus:ring-primary-200">
                     Add Offer
                 </button>
             </form>

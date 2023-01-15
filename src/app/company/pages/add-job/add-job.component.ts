@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {TextEditorService} from "../../services";
+import {OfferService, TextEditorService} from "../../services";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {CountryService} from "../../../core";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-job',
@@ -9,6 +10,8 @@ import {CountryService} from "../../../core";
   styleUrls: ['./add-job.component.css']
 })
 export class AddJobComponent implements OnInit {
+
+  error: boolean = false
 
   countries: String[] = []
 
@@ -22,7 +25,9 @@ export class AddJobComponent implements OnInit {
   })
 
   constructor(private textEditorService: TextEditorService,
-              private countryService: CountryService) { }
+              private countryService: CountryService,
+              private offerService: OfferService,
+              private router: Router) { }
 
   ngOnInit(): void {
     type Country = {
@@ -43,5 +48,32 @@ export class AddJobComponent implements OnInit {
   displayFormValues() {
     console.log(this.addJobForm.controls)
   }
+
+
+
+  addOffer() {
+
+    this.displayFormValues()
+
+    const payload = {
+      profile: this.addJobForm.get('profile')?.value ?? '',
+      description: this.textEditorService.textEditorValue,
+      jobType: this.addJobForm.get('jobType')?.value ?? '',
+      salary: this.addJobForm.get('salary')?.value ?? '',
+      salaryType: this.addJobForm.get('salaryType')?.value ?? '',
+      country: this.addJobForm.get('country')?.value ?? '',
+      state: 'OPEN'
+    }
+
+    this.offerService.add(payload).subscribe({
+      next: (data) => {
+        this.router.navigate(['/jobs'])
+      },
+      error: (err) => {
+        this.error = true
+      }
+    })
+  }
+
 
 }

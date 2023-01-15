@@ -11,6 +11,7 @@ type Company = {
   foundationDate: string,
   logo: string
 }
+
 type Verification = {
   email: string,
   password: string,
