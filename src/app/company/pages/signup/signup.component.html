@@ -19,7 +19,7 @@
       <div class="max-w-xl w-8/12 lg:max-w-3xl">
 
         <form [formGroup]="companyForm" action="#" class="mt-8 grid grid-cols-6 gap-6">
-          <p *ngIf="error" class="font-medium text-red-600 col-span-6"> Please check if all fields are valid </p>
+          <p *ngIf="error" class="font-medium text-red-600 col-span-6"> {{errorValue}} </p>
           <div class="col-span-6">
             <label
               for="FirstName"
