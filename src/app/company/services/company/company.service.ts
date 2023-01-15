@@ -11,6 +11,11 @@ type Company = {
   foundationDate: string,
   logo: string
 }
+type Verification = {
+  email: string,
+  password: string,
+  code: string
+}
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +28,9 @@ export class CompanyService {
 
   register(payload: Company): Observable<any> {
     return this.http.post(`${this.baseUrl}/register`, payload )
+  }
+
+  verify(payload: Verification){
+    return this.http.post(`${this.baseUrl}/register/verify`, payload )
   }
 }
