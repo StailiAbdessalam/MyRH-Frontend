@@ -2,7 +2,7 @@
     <div class="w-11/12 mx-auto flex flex-row justify-between items-center">
         <div class="w-3/12 flex flex-row justify-center items-center">
             <ul class="w-full flex flex-row justify-between items-center">
-                <li class="logo cursor-pointer">
+                <li [routerLink]="['']" class="logo cursor-pointer">
                     <img class="h-8 w-8" src="/assets/icons/logo.svg" alt="logo">
                 </li>
                 <li>
@@ -11,8 +11,8 @@
                     </a>
                 </li>
                 <li>
-                    <a [routerLink]="['']" class="font-medium link link-underline hover:text-purple-600 after:bg-color-400 link-underline-black">
-                         Contact 
+                    <a  class="font-medium link link-underline hover:text-purple-600 after:bg-color-400 link-underline-black">
+                         Contact
                     </a>
                 </li>
             </ul>
